@@ -679,6 +679,38 @@ if ($get_sum_out[$currency] < 0){
           <td align="right">&nbsp;</td>
           <td>&nbsp;</td>
         </tr>
+
+<?php
+    $sqlAdjSell = "SELECT * FROM `adjust_sell` WHERE `a_iso`='{$currency}' AND `a_date` LIKE '{$dd}%' AND `a_branch`='{$branchID}' AND  `a_active`='1' ";
+    $resultAdjSell = $conn->query($sqlAdjSell); 
+    while($rowAdjSell = $resultAdjSell->fetch_assoc()) {           
+?>
+<tr>
+          <td align="center">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td align="right">&nbsp;</td>
+          <td align="right">&nbsp;</td>
+          <td align="right">&nbsp;</td>
+          <td align="right">&nbsp;</td>
+          <td align="right">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td align="center"><?php
+// แปลงวันที่        
+$dateAdjSell = strtotime($rowAdjSell['a_date']);
+$formattedDateAdjSell = date('j/n', $dateAdjSell) . '/' . ((date('Y', $dateAdjSell) + 543) % 100);
+echo $formattedDateAdjSell ;
+?></td>
+          <td><?php echo $rowAdjSell['a_iso']; ?></td>
+          <td align="right"><?php echo $rowAdjSell['a_rate']; ?></td>
+          <td align="right" class="col13_<?php echo $currency;?>"><?php echo $rowAdjSell['a_amount']; ?></td>
+          <td align="right" class="col14_<?php echo $currency;?>"><?php echo $rowAdjSell['a_total']; ?></td>
+          <td>&nbsp;</td>
+          <td align="right">&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+<?php } ?>      
+        
 <?php
 ///////////// out ///////////////   
 $sqlOut = "
