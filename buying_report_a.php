@@ -707,8 +707,8 @@ echo $formattedDateAdjSell ;
                 echo isset($res1['data1']) ? $res1['data1'] : "--";
               ?></td>
           <td align="right"><?php echo $rowAdjSell['a_rate']; ?></td>
-          <td align="right" class="col13_<?php echo $currency;?>"><?php echo $rowAdjSell['a_amount']; ?></td>
-          <td align="right" class="col14_<?php echo $currency;?>"><?php echo $rowAdjSell['a_total']; ?></td>
+          <td align="right" class="col13_<?php echo $currency;?>"><?php echo number_format($rowAdjSell['a_amount'],2); ?></td>
+          <td align="right" class="col14_<?php echo $currency;?>"><?php echo number_format($rowAdjSell['a_total'],2); ?></td>
           <td>&nbsp;</td>
           <td align="right">&nbsp;</td>
           <td>&nbsp;</td>
