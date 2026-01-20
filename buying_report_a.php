@@ -701,7 +701,11 @@ $dateAdjSell = strtotime($rowAdjSell['a_date']);
 $formattedDateAdjSell = date('j/n', $dateAdjSell) . '/' . ((date('Y', $dateAdjSell) + 543) % 100);
 echo $formattedDateAdjSell ;
 ?></td>
-          <td><?php echo $rowAdjSell['a_iso']; ?></td>
+          <td><?php
+                $key1 = $rowAdjSell['a_iso'];
+                $res1 = searchCurrencyByKey($key1);
+                echo isset($res1['data1']) ? $res1['data1'] : "--";
+              ?></td>
           <td align="right"><?php echo $rowAdjSell['a_rate']; ?></td>
           <td align="right" class="col13_<?php echo $currency;?>"><?php echo $rowAdjSell['a_amount']; ?></td>
           <td align="right" class="col14_<?php echo $currency;?>"><?php echo $rowAdjSell['a_total']; ?></td>
