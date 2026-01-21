@@ -663,7 +663,7 @@ echo $formattedDateAdjSell ;
                 $res1 = searchCurrencyByKey($key1);
                 echo isset($res1['data1']) ? $res1['data1'] : "--";
               ?></td>
-          <td align="right"><?php echo $rowAdjSell['a_rate']; ?></td>
+          <td align="right"><?php echo sprintf('%g', $rowAdjSell['a_rate']); ?></td>
           <td align="right" class="col13_<?php echo $month_num;?>"><?php echo number_format($rowAdjSell['a_amount'],2); ?></td>
           <td align="right" class="col14_<?php echo $month_num;?>"><?php echo number_format($rowAdjSell['a_total'],2); ?></td>
           <td>&nbsp;</td>
