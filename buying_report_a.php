@@ -433,11 +433,11 @@ foreach ($data as $entry){
         
         if ($first_val > 0){
         echo number_format($first_val, 2);
-        //echo "<br><font color='gray'>" . number_format($get_sum_out[$currency], 2)."</font>";
+        echo "<br><font color='gray'>" . number_format($get_sum_out[$currency], 2)."</font>";
         }
     }  else {
         echo number_format($entry['amount'], 2);
-        //echo "<br><font color='gray'>" . number_format($get_sum_out[$currency], 2)."</font>";
+        echo "<br><font color='gray'>" . number_format($get_sum_out[$currency], 2)."</font>";
     }         
 ?>            
             </td>
@@ -631,11 +631,11 @@ if ($get_sum_out[$currency] < $row['totalAmount']){
         
         if ($first_val > 0){
         echo number_format($first_val, 2);
-        //echo "<br><font color='gray'>" . number_format($get_sum_out[$currency], 2)."</font>";
+        echo "<br><font color='gray'>" . number_format($get_sum_out[$currency], 2)."</font>";
         }
     }  else {
         echo number_format($row['totalAmount'], 2);
-        //echo "<br><font color='gray'>" . number_format($get_sum_out[$currency], 2)."</font>";
+        echo "<br><font color='gray'>" . number_format($get_sum_out[$currency], 2)."</font>";
     }         
 ?>
           </td>
